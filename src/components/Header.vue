@@ -2,16 +2,16 @@
     <div class="container">
             <el-menu :default-active="active" :router="true" class="el-menu-demo"   mode="horizontal" @select="handleSelect">
                 <el-menu-item index="/" class="logo">房东的猫</el-menu-item>
-                <el-menu-item index="/list"><i  class="fa fa-flag " aria-hidden="true"></i>探索</el-menu-item>
+                <el-menu-item index="/article?type=all"><i  class="fa fa-flag " aria-hidden="true"></i>探索</el-menu-item>
                 <template v-if="user">
                    
                          <li class="el-menu-item right" @click="handleExit" ><i  class="fa fa-sign-out "   aria-hidden="true"></i>注销</li>
                          <el-submenu index="4" class="right">
-                           <span slot="title">{{user.getUsername()}}</span>
-                             <el-menu-item index="5-1">
-                                 个人中心 
+                           <!-- <span slot="title">{{user.getUsername()}}</span> -->
+                             <el-menu-item index="/article?type=me">
+                                 我的文章 
                              </el-menu-item>
-                                <el-menu-item index="5-2">
+                                <el-menu-item index="/article/create">
                                 发布文章
                              </el-menu-item>
                                 <el-menu-item index="5-3">

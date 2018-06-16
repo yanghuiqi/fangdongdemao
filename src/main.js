@@ -5,14 +5,32 @@ import App from './App'
 import VueProgressBar from 'vue-progressbar'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import '@/assets/global.css'
 import router from './router'
 import store from './store'
 import api from './api'
+
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false
 
 localStorage.setItem('debug', 'leancloud*')
+
+router.beforeEach((to, from, next) => {
+ 
+    if (to.matched.some(record => record.meta.needLogin)) {
+        if (!store.state.user) {
+            app.$message.error("请登录");
+            next({
+                path: '/signIn'
+            })
+        } else {
+            next()
+        }
+    }else{
+        next()
+    }
+})
 
 Vue.mixin({
     beforeCreate() {
@@ -41,10 +59,9 @@ const user = api.SDK.User.current()
 
 if (user) {
     store.commit('setUser', user)
-  
 }
 
-new Vue({
+const app = new Vue({
     el: '#app',
     router,
     store,

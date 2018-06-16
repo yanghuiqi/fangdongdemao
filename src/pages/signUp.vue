@@ -15,7 +15,7 @@
                 <el-input type="password" v-model="user.cpwd" auto-complete="off"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" @click="submitForm('form')">提交</el-button>
+                <el-button type="primary"  @click="submitForm('form')">提交</el-button>
           </el-form-item>
     </el-form>
    </div>
