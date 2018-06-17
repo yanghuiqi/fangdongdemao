@@ -14,9 +14,16 @@
                                 <el-menu-item index="/article/create">
                                 发布文章
                              </el-menu-item>
+                             <el-menu-item index="/followee">我的关注</el-menu-item>
+                             <el-menu-item index="/follower">我的粉丝</el-menu-item>
+                             <el-menu-item index="/friend">我的朋友圈</el-menu-item>
+                             <el-menu-item index="/messsage">我的站内信</el-menu-item>
+
+                                  <el-menu-item index="me" :route="{ name:'User', params:{ id : user.id }}">我的主页</el-menu-item>
                                 <el-menu-item index="5-3">
                                 消息
                              </el-menu-item>
+                         
                          </el-submenu>
                          
                 </template>

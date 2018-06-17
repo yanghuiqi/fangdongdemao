@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      <my-header></my-header>
+     <my-header></my-header>
      <router-view/>
      <vue-progress-bar></vue-progress-bar>
   </div>

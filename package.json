@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "skeleton": "webpack --config build/webpack.skeleton.conf.js && node skeleton.js"
   },
   "dependencies": {
     "element-ui": "^2.4.1",
@@ -15,7 +16,9 @@
     "vue": "^2.5.2",
     "vue-progressbar": "^0.7.5",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vue-server-renderer": "^2.5.16",
+    "vuex": "^3.0.1",
+    "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
