@@ -14,7 +14,14 @@ Vue.use(ElementUI);
 
 Vue.config.productionTip = false
 
-localStorage.setItem('debug', 'leancloud*')
+// localStorage.setItem('debug', 'leancloud*')
+
+
+const user = api.SDK.User.current()
+
+if (user) {
+  store.commit('setUser', user);
+}
 
 router.beforeEach((to, from, next) => {
  
@@ -55,11 +62,7 @@ const options = {
 }
 Vue.use(VueProgressBar, options)
 
-const user = api.SDK.User.current()
 
-if (user) {
-    store.commit('setUser', user)
-}
 
 const app = new Vue({
     el: '#app',

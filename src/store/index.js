@@ -14,7 +14,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-        user: {}
+        user:null
     },
     getters:{
         uid({user}){
@@ -24,16 +24,16 @@ const store = new Vuex.Store({
         }
     },
     mutations: {
-        setUser(state, user) {
+        setUser (state, user) {
             state.user = user
-        }
+        },
     },
     actions: {
         exit(context){
-            context.commit('setUser',null)
+            context.commit('setUser', null);
         },
-        login(context,user){
-            context.commit('setUser',user)
+        login(context, user){
+            context.commit('setUser', user);
         }
     }
 })
